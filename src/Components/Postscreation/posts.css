@@ -1,0 +1,38 @@
+.postCard {
+    height: 70px;
+    width: 400px;
+    background-color: floralwhite;
+    border-radius: 10px;
+    margin: auto;
+  }
+
+  .text{
+    height: 50px;
+    width: 300px;
+    margin-left: 45px;
+    border-radius: 10px;
+    font-size: 8px;
+  }
+
+  .postsContent{
+    height: 250px;
+    width: 400px;
+    margin: auto;
+    border: 0.5px solid grey;
+    border-radius: 10px;
+  }
+  
+  .logOut{
+    border-radius: 5px;
+    margin: 3px;
+    margin-left: 40%;
+    background-color: lightgreen;
+  }
+
+  .circle{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: darkolivegreen;
+    text-align: center;
+  }

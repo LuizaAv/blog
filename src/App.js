@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Infostation from "./Components/Infostation";
-import {PostCreation} from "./Components/PostCreation";
-import Posts from './Components/Posts';
+import Loginform from './Components/Loginform/Loginform';
+import Infostation from './Components/Infostation/Infostation';
+import Postscreation from './Components/Postscreation/Postscreation';
+import Posts from './Components/Postscreation/Posts';
 
 function App(props) {
   return (
@@ -19,15 +20,14 @@ function App(props) {
           </li>
 
           <li>
-            <Link to="/Login" className="navbarLi">Log In</Link>
+            <Link to="/login" className="navbarLi">Log In</Link>
           </li>
         </ul>
         <Switch>
           <Route exact path="/" component={Infostation}></Route>
-          <Route path="/postcreation" component={PostCreation}></Route>
-          <Route path='/posts'>
-            <Posts/>
-          </Route>
+          <Route exact path="/postcreation" component={Postscreation}></Route>
+          <Route exact path='/login' component={Loginform}></Route>
+          <Route exact path='/posts' component={Posts}></Route>
         </Switch>
       </div>
     </Router>
