@@ -1,0 +1,25 @@
+.loginMain{
+    width: 450px;
+}
+
+input{
+    height: 40px;
+    width: 400px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    margin: 5px;
+    margin-left: 200px;
+    font-size: 10px;
+}
+
+h4{
+    text-align: center;
+    color: darkolivegreen;
+}
+
+.logSubmit{
+    border-radius: 8px;
+    margin-left: 350px;
+    background-color: darkolivegreen;
+}

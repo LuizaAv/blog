@@ -7,6 +7,7 @@ function Posts(props) {
           <div className='circle'>L</div>
           <p>{props.title}</p>  
           <p>{props.content}</p>
+          <p>{props.time}</p>
         </div>
     )
 }

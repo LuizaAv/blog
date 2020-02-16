@@ -7,7 +7,8 @@ class Generator extends Component {
         super(props);
         this.state = {
           title: "",
-          content: ""
+          content: "",
+          date: new Date()
         };
       }
 
@@ -23,14 +24,20 @@ class Generator extends Component {
         });
       };    
 
+      clickHandler = event => {
+        
+      }
+
     render() {
         return (
             <div>
                 <Postscreation
                 change1={this.changeHandler1}
                 change2={this.changeHandler2}
+                click={event => this.clickHandler}
                 />
                 <Posts
+                time={this.state.date.toLocaleTimeString()}
                 title={this.state.title}
                 content={this.state.content}
                 />
