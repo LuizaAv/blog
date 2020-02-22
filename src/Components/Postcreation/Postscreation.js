@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import "./posts.css";
-import Posts from './Posts'
 
 class Postscreation extends Component {
   constructor(props) {
     super(props);
   }
+
+  titleChange = event => {
+    this.props.titleChangeHandler(event.target.value);
+  };
+
+  contentChange = event => {
+    this.props.contentChangeHandler(event.target.value);
+  };
+
   render() {
     const checkBox = {
       fontSize: "25px",
@@ -22,7 +30,7 @@ class Postscreation extends Component {
                   ....`)
           }
           onBlur={event => (event.target.placeholder = "Title *")}
-          onChange={this.props.change1}
+          onChange={this.titleChange}
         ></textarea>
         <textarea
           className="text"
@@ -31,16 +39,9 @@ class Postscreation extends Component {
             (event.target.placeholder = `Content  
                     ....Write your post`)
           }
-          onChange={this.props.change2}
           onBlur={event => (event.target.placeholder = "Content *")}
+          onChange={this.contentChange}
         ></textarea>
-        <i
-          className="fa fa-check-square"
-          style={checkBox}
-          onClick={event => this.props.click}
-          onClick={event => (window.location.href = "/posts")}
-        ></i>
-        <button className="logOut">Log Out</button>
       </div>
     );
   }

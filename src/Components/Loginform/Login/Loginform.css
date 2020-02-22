@@ -11,6 +11,9 @@ input{
     margin: 5px;
     margin-left: 200px;
     font-size: 10px;
+    outline: none;
+    background-color: lightgreen;
+    border-radius: 8px;
 }
 
 h4{

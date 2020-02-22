@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
-import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Loginform from './Components/Loginform/Loginform';
+import Loginform  from './Components/Loginform/Login/Loginform';
 import Infostation from './Components/Infostation/Infostation';
-import Postscreation from './Components/Postscreation/Postscreation';
-import Posts from './Components/Postscreation/Posts';
+import Postscreation from './Components/Postcreation/Postscreation';
+import PostsDone from './Components/Postcreation/PostsDone';
+import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-function App(props) {
+function App() {
   return (
     <Router>
       <div>
-        <ul className="navBar">
+      <ul className="navBar">
           <li>
             <Link to="/" className="navbarLi">Blog</Link>
           </li>
@@ -27,7 +27,7 @@ function App(props) {
           <Route exact path="/" component={Infostation}></Route>
           <Route exact path="/postcreation" component={Postscreation}></Route>
           <Route exact path='/login' component={Loginform}></Route>
-          <Route exact path='/posts' component={Posts}></Route>
+          <Route exact path='/posts' component={PostsDone}></Route>
         </Switch>
       </div>
     </Router>
