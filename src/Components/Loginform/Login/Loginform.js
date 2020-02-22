@@ -15,6 +15,10 @@ class Loginform extends Component {
       this.props.passwordChange(event.target.value)
   }
 
+  clickHandler = (event) => {
+    alert(`${this.props.name} heloo`)
+  }
+
   render() {
     return (
       <div className="loginMain">
@@ -24,13 +28,18 @@ class Loginform extends Component {
         value={this.props.name}
         onChange={this.namechangeHandler}
         />
+        <p>{this.props.name}</p>
         <input 
         placeholder="Password ..." 
         type="password"
         value={this.props.password}
         onChange={this.passwordchangeHandler}
          />
-        <button type="submit" className="logSubmit">
+         <p>{this.props.password}</p>
+        <button 
+        type="submit" 
+        className="logSubmit"
+        onClick = {this.clickHandler}>
           Log in
         </button>
       </div>

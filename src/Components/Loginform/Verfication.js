@@ -21,6 +21,9 @@ class Verfication extends Component {
       password: password
     });
   };
+
+  
+
   render() {
     return (
       <div>
