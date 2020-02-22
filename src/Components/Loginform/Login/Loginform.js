@@ -28,14 +28,14 @@ class Loginform extends Component {
         value={this.props.name}
         onChange={this.namechangeHandler}
         />
-        <p>{this.props.name}</p>
+        
         <input 
         placeholder="Password ..." 
         type="password"
         value={this.props.password}
         onChange={this.passwordchangeHandler}
          />
-         <p>{this.props.password}</p>
+        
         <button 
         type="submit" 
         className="logSubmit"
