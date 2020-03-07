@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Loginform from "../Loginform/Login/Loginform";
+import Loginform from "./Login/Loginform";
 
 class Verfication extends Component {
   constructor(props) {

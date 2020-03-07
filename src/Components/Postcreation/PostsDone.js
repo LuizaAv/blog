@@ -3,12 +3,18 @@ import './posts.css';
 
 function Posts(props) {
     return (
-        <div className='postCard'>
-          <div className='circle'>L</div>
-          <p>{props.title}</p>  
-          <p>{props.content}</p>
-          <p>{props.time}</p>
-        </div>
+      <div>
+        {props.posts.map( (post , index) =>{
+          return(
+            <div className='postCard' key={index}>
+              <div className='circle'>L</div>  
+              <p>{post.postValue}</p>
+            </div>
+          )
+          
+        })}
+      </div>
+        
     )
 }
 

@@ -6,7 +6,22 @@ import Postscreation from './Components/Postcreation/Postscreation';
 import PostsDone from './Components/Postcreation/PostsDone';
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-function App() {
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      posts : [], 
+    }
+  }
+
+  pushPostToPosts = (post) =>{
+     this.setState(({posts})=>({
+       posts : [...posts , post]
+     }))
+  }
+
+  render(){
+    console.log(this.state.posts)
   return (
     <Router>
       <div>
@@ -25,13 +40,18 @@ function App() {
         </ul>
         <Switch>
           <Route exact path="/" component={Infostation}></Route>
-          <Route exact path="/postcreation" component={Postscreation}></Route>
+          <Route exact path="/postcreation">
+            <Postscreation pushPostToPosts={this.pushPostToPosts}/>
+          </Route>
           <Route exact path='/login' component={Loginform}></Route>
-          <Route exact path='/posts' component={PostsDone}></Route>
+          <Route exact path='/posts'>
+            <PostsDone posts={this.state.posts}/>
+          </Route>
         </Switch>
       </div>
     </Router>
   );
+}
 }
 
 export default App;

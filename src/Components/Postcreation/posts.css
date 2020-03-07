@@ -37,3 +37,10 @@
     background-color: darkolivegreen;
     text-align: center;
   }
+
+  .submitBtn{
+    border-radius: 5px;
+    margin: 3px;
+    margin-left: 40%;
+    background-color: lightgreen; 
+  }

@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import "./posts.css";
+import { withRouter } from 'react-router-dom'
 
 class Postscreation extends Component {
   constructor(props) {
     super(props);
+    this.state={
+      post : {}
+    }
   }
 
-  titleChange = event => {
-    this.props.titleChangeHandler(event.target.value);
-  };
+  handlePostValue = (e) =>{
+     this.setState({
+       post : {postValue : e.target.value}
+     })
+  }
 
-  contentChange = event => {
-    this.props.contentChangeHandler(event.target.value);
-  };
+  goToPosts = () =>{
+     this.props.pushPostToPosts(this.state.post)
+     this.props.history.push('/posts')
+  }
 
   render() {
+    //console.log('post', this.state.post)
     const checkBox = {
       fontSize: "25px",
       color: "rgb(1, 48, 13)"
@@ -22,16 +30,7 @@ class Postscreation extends Component {
     return (
       <div className="postsContent">
         <h5>Tell us your story</h5>
-        <textarea
-          className="text"
-          placeholder="Title *"
-          onFocus={event =>
-            (event.target.placeholder = `Title
-                  ....`)
-          }
-          onBlur={event => (event.target.placeholder = "Title *")}
-          onChange={this.titleChange}
-        ></textarea>
+
         <textarea
           className="text"
           placeholder="Content *"
@@ -40,11 +39,14 @@ class Postscreation extends Component {
                     ....Write your post`)
           }
           onBlur={event => (event.target.placeholder = "Content *")}
-          onChange={this.contentChange}
+          onChange={this.handlePostValue}
         ></textarea>
+        <button 
+           className='submitBtn'
+           onClick={this.goToPosts}>Submit</button>
       </div>
     );
   }
 }
 
-export default Postscreation;
+export default withRouter(Postscreation);
